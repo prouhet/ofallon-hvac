@@ -904,7 +904,6 @@
                     <select id="type-filter">
                         <option value="all">All Types</option>
                         <option value="residential-service">Residential Service</option>
-                        <option value="emergency-available">Emergency Available</option>
                         <option value="commercial-services">Commercial Services</option>
                     </select>
                 </div>
@@ -913,9 +912,7 @@
                     <label for="service-filter">Emergency Service</label>
                     <select id="service-filter">
                         <option value="all">All Services</option>
-                        <option value="24hour">24/7 Emergency</option>
-                        <option value="sameday">Same Day Service</option>
-                        <option value="weekend">Weekend Service</option>
+                        <option value="emergency-24-7">Emergency & 24/7</option>
                     </select>
                 </div>
                 
@@ -2098,10 +2095,6 @@
                                 typeMatch = company.type.includes('Full Service HVAC') || 
                                            company.type.includes('Residential Specialist');
                                 break;
-                            case 'emergency-available':
-                                // Filter by companies with 24/7 emergency service
-                                typeMatch = company.emergencyService === true;
-                                break;
                             case 'commercial-services':
                                 // Companies that mention commercial work in specialties or features
                                 const hasCommercial = company.specialties.some(specialty => 
@@ -2121,9 +2114,7 @@
                     
                     // Service filter
                     if (serviceValue !== 'all') {
-                        if (serviceValue === '24hour' && !company.emergencyService) return false;
-                        if (serviceValue === 'sameday' && !company.emergencyService) return false;
-                        if (serviceValue === 'weekend' && !company.emergencyService) return false;
+                        if (serviceValue === 'emergency-24-7' && !company.emergencyService) return false;
                     }
                     
                     // Brand filter
