@@ -369,6 +369,9 @@
             overflow: hidden;
             box-shadow: var(--box-shadow);
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .profile-card:hover {
@@ -402,6 +405,7 @@
 
         .profile-body {
             padding: 20px;
+            flex: 1;
         }
 
         .profile-info {
@@ -899,11 +903,9 @@
                     <label for="type-filter">Service Type</label>
                     <select id="type-filter">
                         <option value="all">All Types</option>
-                        <option value="full-service">Full Service HVAC</option>
-                        <option value="residential">Residential Specialist</option>
-                        <option value="commercial">Commercial HVAC</option>
-                        <option value="emergency">Emergency Focused</option>
-                        <option value="installation">Installation Specialist</option>
+                        <option value="residential-service">Residential Service</option>
+                        <option value="emergency-available">Emergency Available</option>
+                        <option value="commercial-services">Commercial Services</option>
                     </select>
                 </div>
                 
@@ -2088,27 +2090,30 @@
                 const filteredCompanies = hvacData.filter(company => {
                     // Type filter
                     if (typeValue !== 'all') {
-                        const companyTypeLower = company.type.toLowerCase();
                         let typeMatch = false;
                         
                         switch(typeValue) {
-                            case 'full-service':
-                                typeMatch = companyTypeLower.includes('full service');
+                            case 'residential-service':
+                                // Combines Full Service HVAC + Residential Specialist
+                                typeMatch = company.type.includes('Full Service HVAC') || 
+                                           company.type.includes('Residential Specialist');
                                 break;
-                            case 'residential':
-                                typeMatch = companyTypeLower.includes('residential');
+                            case 'emergency-available':
+                                // Filter by companies with 24/7 emergency service
+                                typeMatch = company.emergencyService === true;
                                 break;
-                            case 'commercial':
-                                typeMatch = companyTypeLower.includes('commercial');
-                                break;
-                            case 'emergency':
-                                typeMatch = companyTypeLower.includes('emergency');
-                                break;
-                            case 'installation':
-                                typeMatch = companyTypeLower.includes('installation');
+                            case 'commercial-services':
+                                // Companies that mention commercial work in specialties or features
+                                const hasCommercial = company.specialties.some(specialty => 
+                                    specialty.toLowerCase().includes('commercial')) ||
+                                    company.features.some(feature => 
+                                    feature.toLowerCase().includes('commercial')) ||
+                                    company.specialServices.some(service => 
+                                    service.toLowerCase().includes('commercial'));
+                                typeMatch = hasCommercial;
                                 break;
                             default:
-                                typeMatch = companyTypeLower.includes(typeValue);
+                                typeMatch = company.type.toLowerCase().includes(typeValue);
                         }
                         
                         if (!typeMatch) return false;
