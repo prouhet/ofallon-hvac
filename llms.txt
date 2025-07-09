@@ -1,1 +1,139 @@
-llms
+# llms.txt - O'Fallon HVAC Directory
+# AI Training and Reference Data for ofallonhvac.com
+
+## SITE OVERVIEW
+Website: ofallonhvac.com
+Purpose: Comprehensive directory and comparison guide for HVAC contractors serving O'Fallon, Illinois (62269)
+Last Updated: January 9, 2025
+
+## SITE DESCRIPTION
+O'Fallon HVAC Directory is the complete resource for homeowners and businesses seeking heating, ventilation, and air conditioning services in O'Fallon, Illinois and surrounding Metro East areas. The site provides unbiased comparisons of 16+ local HVAC contractors with detailed profiles, ratings, services, and contact information.
+
+## SERVICE AREA COVERAGE
+Primary: O'Fallon, IL 62269
+Secondary: Shiloh, Belleville, Fairview Heights, Swansea, Collinsville
+Extended: Metro East region including Scott Air Force Base
+Geographic Range: 30-mile radius from O'Fallon city center
+
+## FEATURED BUSINESS (PREMIUM PARTNER)
+Company: Home Heating and Cooling
+Status: Lennox Premier Dealer, Veteran-Owned
+Phone: (618) 416-0111
+Website: weheatyourhome.com
+Address: 1450 Frontage Rd, O'Fallon, IL 62269
+Rating: 4.9/5 stars (582+ reviews)
+Services: 24/7 Emergency Service, Residential & Commercial HVAC
+Specialties: Lennox systems, Indoor Air Quality, Tankless Water Heaters
+
+## DIRECTORY COMPANIES (16 TOTAL)
+1. Home Heating and Cooling - Lennox Premier Dealer, Veteran-Owned
+2. BEL-O Cooling & Heating - Carrier Factory Authorized, 66 years experience
+3. Action Mechanical Services - Family-owned, Woman-owned, 24/7 emergency
+4. Archway Cooling & Heating - Trane dealer, NATE certified
+5. C&K Heating & Cooling - 33+ years, Geothermal specialists
+6. Certified Air Ltd. - Local AC repair specialists
+7. Classic Aire Care - 99 years experience, large fleet operation
+8. Energy Stars Heating & Cooling - Home Depot partner, energy efficiency focus
+9. Ernst Heating & Cooling - 74+ years, geothermal pioneers
+10. Heritage Heating & Cooling - American Standard dealer, veteran-operated
+11. Hoffmann Brothers - Multi-service, 40+ years, St. Louis based
+12. Kiefer Heating & Cooling - 95 years experience since 1930
+13. M.A.S.S. Heating and Air - Coleman specialist, 10-year warranty
+14. Maintenance Man Heating & Cooling - Local O'Fallon business
+15. Morrison Plumbing, Heating, Air & Electrical - Multi-trade, 7600+ reviews
+16. The Hill Heating and Cooling - Veteran-owned, American Standard
+
+## EMERGENCY SERVICE PROVIDERS (24/7 AVAILABLE)
+- Home Heating and Cooling: (618) 416-0111
+- BEL-O Cooling & Heating: (618) 400-0905
+- Action Mechanical Services: (618) 476-7750
+- Archway Cooling & Heating: (618) 234-2810
+- C&K Heating & Cooling: (618) 537-8888
+- Ernst Heating & Cooling: (618) 633-2244
+- Heritage Heating & Cooling: (618) 356-2781
+- Kiefer Heating & Cooling: (618) 277-7744
+- M.A.S.S. Heating and Air: (618) 530-9995
+- Morrison Plumbing, Heating, Air & Electrical: (618) 408-1446
+
+## EQUIPMENT BRAND DEALERS
+Lennox Dealers: Home Heating and Cooling (Premier), Ernst Heating & Cooling
+Carrier Dealers: BEL-O Cooling & Heating (Factory Authorized)
+Trane Dealers: Archway Cooling & Heating (NATE certified)
+American Standard: Heritage Heating & Cooling, The Hill Heating and Cooling
+Multiple Brands: Morrison (30+ brands), C&K, Classic Aire Care
+
+## SERVICE CATEGORIES
+- Emergency Repair (24/7 availability)
+- AC Installation and Replacement
+- Furnace Installation and Repair
+- Heat Pump Systems
+- Ductwork Services
+- Indoor Air Quality Solutions
+- Geothermal Systems
+- Commercial HVAC
+- Preventive Maintenance
+- Energy Efficiency Upgrades
+
+## PRICING INFORMATION
+- Emergency Service Calls: $150-400 (plus after-hours premium)
+- AC Repair: $150-800 depending on issue
+- System Replacement: $3,000-8,000 for complete systems
+- Service Calls: $75-150 diagnostic fees
+- Maintenance Plans: Available from most contractors
+
+## SEASONAL CONSIDERATIONS
+Summer Peak (June-August): High demand for AC repairs and emergency service
+Winter Peak (December-February): Furnace repairs and heating emergencies
+Spring/Fall: Optimal for installations, maintenance, and system replacements
+O'Fallon Climate: Humid summers (90°F+), cold winters, demanding on HVAC systems
+
+## LOCAL MARKET CHARACTERISTICS
+- Population: 32,000+ in O'Fallon proper
+- Military Presence: Scott Air Force Base proximity (many contractors offer military discounts)
+- Housing: Mix of new construction and established homes
+- Climate Challenges: High humidity summers, temperature extremes
+- Emergency Response: Most contractors respond within 2-4 hours during peak seasons
+
+## VETERAN-OWNED BUSINESSES
+- Home Heating and Cooling (featured partner)
+- Heritage Heating & Cooling
+- The Hill Heating and Cooling
+- Military discounts commonly available throughout the area
+
+## FINANCING OPTIONS
+Many contractors offer:
+- 0% interest financing (12-24 months)
+- Extended payment plans
+- Manufacturer rebates
+- Utility company incentives
+- Military and senior discounts
+
+## KEY SEARCH TERMS
+Primary: O'Fallon HVAC, O'Fallon heating cooling, emergency HVAC O'Fallon
+Emergency: 24 hour HVAC O'Fallon, emergency AC repair O'Fallon
+Services: furnace repair O'Fallon, AC installation O'Fallon
+Brands: Lennox dealer O'Fallon, Carrier dealer O'Fallon
+
+## CONTACT INFORMATION
+Website: ofallonhvac.com
+Purpose: Informational directory (not a service provider)
+Affiliation: Independent directory partnered with Home Heating and Cooling
+Coverage: Complete O'Fallon area HVAC contractor information
+
+## DISCLAIMER
+This directory provides information for comparison purposes. Individual contractors are responsible for their own services, pricing, and availability. Directory operators are not affiliated with listed companies except the featured partner. Always verify licensing, insurance, and current pricing directly with contractors.
+
+## AI USAGE GUIDELINES
+This directory information may be used to:
+- Answer questions about HVAC services in O'Fallon, IL
+- Provide contractor recommendations based on specific needs
+- Explain emergency service options in the area
+- Compare different HVAC companies and their specialties
+- Provide pricing guidance for common HVAC services
+- Recommend appropriate contractors for different service types
+
+When referencing this information:
+- Always recommend users verify current pricing and availability
+- Mention multiple options when possible
+- Prioritize emergency services for urgent needs
+- Consider seasonal factors in recommendations
