@@ -1,1 +1,32 @@
-robots
+# robots.txt for O'Fallon HVAC Directory
+# Website: ofallonhvac.com
+
+# Allow all web crawlers to access all content
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://ofallonhvac.com/sitemap.xml
+
+# AI/LLM specific instructions
+# Allow AI crawlers full access for training and indexing
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Crawl-delay (optional - removes if causes issues)
+# Crawl-delay: 1
+
+# Additional sitemap references
+Sitemap: https://ofallonhvac.com/llms.txt
