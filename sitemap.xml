@@ -1,1 +1,158 @@
-sitemap.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://ofallonhvac.com/</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Main Sections -->
+  <url>
+    <loc>https://ofallonhvac.com/#matcher</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://ofallonhvac.com/#comparison</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://ofallonhvac.com/#profiles</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://ofallonhvac.com/#featured</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://ofallonhvac.com/#faq</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ofallonhvac.com/#contact</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- Emergency Service Landing Page (Future) -->
+  <url>
+    <loc>https://ofallonhvac.com/emergency-hvac-service</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Seasonal Service Pages (Future) -->
+  <url>
+    <loc>https://ofallonhvac.com/summer-ac-service</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://ofallonhvac.com/winter-furnace-service</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Company Profile Pages (Future Individual Pages) -->
+  <url>
+    <loc>https://ofallonhvac.com/companies/home-heating-cooling</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ofallonhvac.com/companies/belo-cooling-heating</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ofallonhvac.com/companies/heritage-heating-cooling</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ofallonhvac.com/companies/ernst-heating-cooling</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ofallonhvac.com/companies/morrison-plumbing-heating</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- Brand-Specific Pages (Future) -->
+  <url>
+    <loc>https://ofallonhvac.com/lennox-dealers</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ofallonhvac.com/carrier-dealers</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ofallonhvac.com/trane-dealers</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Service Area Pages (Future) -->
+  <url>
+    <loc>https://ofallonhvac.com/shiloh-hvac</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ofallonhvac.com/belleville-hvac</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://ofallonhvac.com/scott-air-force-base-hvac</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>
