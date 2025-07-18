@@ -3,33 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O'Fallon HVAC Directory - Compare All HVAC Contractors in O'Fallon, IL</title>
-    <meta name="description" content="Compare all HVAC contractors in O'Fallon, Illinois. Emergency service, 24/7 availability, furnace repair, AC installation, and heating specialists in the 62269 area.">
+    <title>Complete O'Fallon HVAC Guide - Compare All 16+ Contractors</title>
+    <meta name="description" content="Find the perfect HVAC contractor in O'Fallon, IL. Compare all 16+ heating and cooling companies with ratings, services, emergency availability, and pricing. Your complete local guide.">
     
-    <!-- Font Awesome for Icons -->
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        /* Root Variables - HVAC Trust Blue Color Scheme */
+        /* Global Styles - HVAC Theme */
         :root {
-            --primary-color: #3182ce;
-            --secondary-color: #2c5aa0;
-            --accent-color: #63b3ed;
-            --dark-color: #2d3748;
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #f97316;
             --light-color: #f8fafc;
-            --border-radius: 8px;
-            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --dark-color: #1e293b;
+            --gray-color: #64748b;
+            --light-gray: #e2e8f0;
+            --premium-color: #f59e0b;
+            --success-color: #059669;
+            --border-radius: 5px;
+            --box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
         }
 
-        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
         }
 
         body {
@@ -39,21 +47,32 @@
             background-color: var(--light-color);
         }
 
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
+        section {
+            padding: 80px 0;
         }
 
         .btn {
@@ -61,11 +80,11 @@
             padding: 12px 24px;
             border-radius: var(--border-radius);
             font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.9rem;
+            text-align: center;
+            cursor: pointer;
             transition: var(--transition);
             border: none;
-            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .btn-primary {
@@ -84,7 +103,7 @@
         }
 
         .btn-secondary:hover {
-            background-color: #4299e1;
+            background-color: #ea580c;
             color: white;
         }
 
@@ -146,7 +165,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #3182ce 0%, #2c5aa0 100%);
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
             color: white;
             text-align: center;
             padding: 100px 0;
@@ -171,60 +190,420 @@
             gap: 20px;
         }
 
-        /* Contact Section */
-        .contact {
-            background-color: white;
-            padding: 80px 0;
+        /* Matcher Section */
+        .matcher {
+            background-color: var(--light-gray);
         }
 
-        .contact .container {
+        .matcher-content {
+            max-width: 700px;
+            margin: 40px auto 0;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+        }
+
+        .matcher-question {
+            display: none;
+            padding: 30px;
+        }
+
+        .matcher-question.active {
+            display: block;
+        }
+
+        .matcher-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .matcher-option {
+            padding: 15px;
+            background-color: var(--light-gray);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .matcher-option:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .matcher-result {
+            display: none;
+            padding: 30px;
             text-align: center;
         }
 
-        .contact h2 {
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-            font-size: 2rem;
+        .matcher-result.active {
+            display: block;
         }
 
-        .contact p {
+        #result-content {
+            margin: 20px 0;
+        }
+
+        /* Comparison Section */
+        .comparison {
+            background-color: white;
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .filter-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            background-color: white;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        th {
+            background-color: var(--secondary-color);
+            color: white;
+            position: sticky;
+            top: 0px;
+            z-index: 100;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            padding: 12px 15px;
+        }
+
+       tbody tr {
+            transition: var(--transition);
+        }
+
+        tbody tr:hover {
+            background-color: var(--light-gray);
+        }
+
+        .premium-row {
+            background-color: rgba(245, 158, 11, 0.1);
+        }
+
+        .premium-row:hover {
+            background-color: rgba(245, 158, 11, 0.2);
+        }
+
+        .company-logo-small {
+            height: 30px;
+            width: 30px;
+            margin-right: 10px;
+            object-fit: contain;
+        }
+
+        .company-name-cell {
+            vertical-align: middle;
+        }
+
+        .name-wrapper {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        td {
+            vertical-align: middle;
+        }
+
+        .star-rating {
+            color: var(--premium-color);
+        }
+
+        /* Profiles Section */
+        .profiles {
+            background-color: var(--light-gray);
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .profile-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-header {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .profile-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            margin-right: 15px;
+        }
+
+        .profile-title h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .profile-type {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+
+        .profile-body {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .profile-info {
+            margin-bottom: 15px;
+        }
+
+        .profile-info h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .profile-info p, .profile-info ul {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+
+        .profile-info ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        .profile-footer {
+            padding: 15px 20px;
+            background-color: var(--light-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .profile-rating {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-rating .star-rating {
+            margin-right: 5px;
+        }
+
+        .profile-link a {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .premium-card {
+            border: 2px solid var(--premium-color);
+        }
+
+        .premium-badge {
+            background-color: var(--premium-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        /* Featured Section */
+        .featured {
+            background-color: white;
+        }
+
+        .featured-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .featured-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .featured-logo {
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+        }
+
+        .featured-info {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .featured-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .benefit {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .benefit:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .benefit h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background-color: white;
+        }
+
+        .faq-list {
+            margin-top: 40px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-question h3 {
+            margin: 0;
             font-size: 1.1rem;
-            margin-bottom: 40px;
-            color: #666;
+            flex: 1;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            padding: 0 0 20px;
+            display: none;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-answer p {
+            margin-bottom: 15px;
+        }
+
+        .faq-answer ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--light-gray);
         }
 
         .contact-content {
             display: flex;
+            flex-wrap: wrap;
             gap: 40px;
-            align-items: flex-start;
             margin-top: 40px;
         }
 
         .map-container {
             flex: 1;
-            min-height: 450px;
+            min-width: 300px;
+            height: 450px;
         }
 
         .map-container iframe {
             border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
         }
 
         .contact-info {
             flex: 1;
-            text-align: left;
-        }
-
-        .contact-info h3 {
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-        }
-
-        .contact-info p {
-            margin-bottom: 20px;
-            line-height: 1.7;
+            min-width: 300px;
         }
 
         .premium-contact {
+            margin-top: 30px;
             display: flex;
             align-items: center;
             background-color: white;
@@ -335,6 +714,13 @@
             
             .menu-toggle {
                 display: flex;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            .hero {
+                padding: 60px 0;
             }
             
             .hero h2 {
@@ -343,21 +729,37 @@
             
             .hero-buttons {
                 flex-direction: column;
-                align-items: center;
+                gap: 10px;
             }
             
-            .contact-content {
+            .featured-content {
                 flex-direction: column;
             }
             
-            .premium-contact {
-                flex-direction: column;
-                text-align: center;
+            .featured-image {
+                order: -1;
             }
             
-            .contact-logo {
-                margin-right: 0;
-                margin-bottom: 15px;
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .filters {
+                flex-direction: column;
+            }
+            
+            .matcher-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-benefits {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -375,9 +777,10 @@
                 </div>
                 <ul>
                     <li><a href="#hero">Home</a></li>
-                    <li><a href="#comparison">Compare All</a></li>
-                    <li><a href="#matcher">Find My Match</a></li>
-                    <li><a href="#profiles">Contractor Profiles</a></li>
+                    <li><a href="#matcher">Find Your Match</a></li>
+                    <li><a href="#comparison">Quick Compare</a></li>
+                    <li><a href="#profiles">Company Profiles</a></li>
+                    <li><a href="#featured">Featured Company</a></li>
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -388,8 +791,8 @@
     <!-- Hero Section -->
     <section id="hero" class="hero">
         <div class="container">
-            <h2>Find the Best HVAC Contractors in O'Fallon, Illinois</h2>
-            <p>Compare all HVAC companies in O'Fallon, Shiloh, and surrounding areas with ratings, services, emergency availability, and pricing.</p>
+            <h2>Complete O'Fallon HVAC Guide - Compare All 16+ Contractors</h2>
+            <p>Find the perfect heating and cooling contractor for AC repair, furnace installation, emergency service, and more. Compare all HVAC companies in O'Fallon, Shiloh, and surrounding areas with ratings, services, emergency availability, and pricing.</p>
             <div class="hero-buttons">
                 <a href="#comparison" class="btn btn-primary">Compare All HVAC Companies</a>
                 <a href="#matcher" class="btn btn-secondary">Find My Perfect Match</a>
@@ -411,11 +814,209 @@
                 <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 30px; font-weight: 600;">
                     That's exactly why we created this complete comparison guide. We've researched every contractor, called about emergency availability, and organized everything so you can find your perfect HVAC match without the runaround.
                 </p>
+                
+                <!-- Stats Section -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin: 40px 0; text-align: center;">
+                    <div style="background-color: var(--light-gray); padding: 30px 20px; border-radius: var(--border-radius);">
+                        <h3 style="font-size: 2rem; color: var(--primary-color); margin-bottom: 10px;">16+</h3>
+                        <p style="font-weight: 600; margin: 0;">Contractors Compared</p>
+                    </div>
+                    <div style="background-color: var(--light-gray); padding: 30px 20px; border-radius: var(--border-radius);">
+                        <h3 style="font-size: 2rem; color: var(--primary-color); margin-bottom: 10px;">24/7</h3>
+                        <p style="font-weight: 600; margin: 0;">Emergency Services Available</p>
+                    </div>
+                    <div style="background-color: var(--light-gray); padding: 30px 20px; border-radius: var(--border-radius);">
+                        <h3 style="font-size: 2rem; color: var(--primary-color); margin-bottom: 10px;">100%</h3>
+                        <p style="font-weight: 600; margin: 0;">Local & Unbiased</p>
+                    </div>
+                </div>
+
+                <!-- Why Compare Section -->
+                <div style="background-color: var(--light-gray); padding: 30px; border-radius: var(--border-radius); margin-top: 40px; text-align: left;">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 20px; text-align: center;">Why Compare Before You Commit?</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 15px;">
+                        HVAC service in O'Fallon ranges from $150 emergency repairs to $8,000+ complete system replacements. But advertised prices rarely tell the whole story. Emergency availability, financing options, and equipment brand preferences can turn a "great deal" into a frustrating experience.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.7; margin: 0; font-weight: 600; text-align: center;">
+                        Our side-by-side comparison shows you exactly what to expect from each contractor, helping you make an informed decision that saves both time and money.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Additional sections would go here (comparison, matcher, profiles, faq) -->
+    <!-- Matcher Section -->
+    <section id="matcher" class="matcher">
+        <div class="container">
+            <h2>Find Your HVAC Match</h2>
+            <p>Answer a few questions about your specific needs and preferences to find the perfect HVAC contractor for you.</p>
+            
+            <div class="matcher-content">
+                <div class="matcher-question active" id="question-1">
+                    <h3>What type of HVAC service do you need?</h3>
+                    <div class="matcher-options">
+                        <button class="matcher-option" data-value="emergency">Emergency Repair (AC/Furnace not working)</button>
+                        <button class="matcher-option" data-value="installation">New System Installation</button>
+                        <button class="matcher-option" data-value="maintenance">Routine Maintenance/Tune-up</button>
+                        <button class="matcher-option" data-value="replacement">System Replacement</button>
+                        <button class="matcher-option" data-value="diagnostic">Diagnostic/Second Opinion</button>
+                        <button class="matcher-option" data-value="ductwork">Ductwork/Air Quality</button>
+                    </div>
+                </div>
+                
+                <div class="matcher-question" id="question-2">
+                    <h3>How urgent is your HVAC need?</h3>
+                    <div class="matcher-options">
+                        <button class="matcher-option" data-value="immediate">Immediate - Need service today</button>
+                        <button class="matcher-option" data-value="soon">Soon - Within a few days</button>
+                        <button class="matcher-option" data-value="planning">Planning ahead - Not urgent</button>
+                    </div>
+                </div>
+                
+                <div class="matcher-question" id="question-3">
+                    <h3>What's your budget range?</h3>
+                    <div class="matcher-options">
+                        <button class="matcher-option" data-value="budget">Budget-conscious ($100-500)</button>
+                        <button class="matcher-option" data-value="moderate">Moderate ($500-2000)</button>
+                        <button class="matcher-option" data-value="premium">Premium ($2000+)</button>
+                        <button class="matcher-option" data-value="unsure">Not sure - Need estimate</button>
+                    </div>
+                </div>
+                
+                <div class="matcher-result" id="matcher-result">
+                    <h3>Your Ideal HVAC Contractor Match</h3>
+                    <div id="result-content"></div>
+                    <button id="restart-matcher" class="btn btn-secondary">Start Over</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="comparison" class="comparison">
+        <div class="container">
+            <h2>HVAC Contractor Comparison Chart</h2>
+            <p>Compare all HVAC contractors in the O'Fallon area side by side to find the perfect match for your heating and cooling needs.</p>
+            
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="type-filter">Service Type</label>
+                    <select id="type-filter">
+                        <option value="all">All Types</option>
+                        <option value="residential-service">Residential Service</option>
+                        <option value="commercial-services">Commercial Services</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="service-filter">Emergency Service</label>
+                    <select id="service-filter">
+                        <option value="all">All Services</option>
+                        <option value="emergency-24-7">Emergency & 24/7</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="brand-filter">Equipment Brands</label>
+                    <select id="brand-filter">
+                        <option value="all">All Brands</option>
+                        <option value="lennox">Lennox Dealer</option>
+                        <option value="carrier">Carrier Dealer</option>
+                        <option value="trane">Trane Dealer</option>
+                        <option value="goodman">Goodman</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="table-container">
+                <table id="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Company Name</th>
+                            <th>Service Type</th>
+                            <th>Emergency Service</th>
+                            <th>Primary Brands</th>
+                            <th>Specialties</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table rows will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profiles Section -->
+    <section id="profiles" class="profiles">
+        <div class="container">
+            <h2>HVAC Contractor Profiles</h2>
+            <p>Detailed information about each HVAC contractor in the O'Fallon area to help you make an informed decision.</p>
+            
+            <div id="company-profiles" class="profile-grid">
+                <!-- Company profile cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section id="featured" class="featured">
+        <div class="container">
+            <div class="premium-badge">Preferred Partner</div>
+            <h2>Featured Company: Home Heating and Cooling</h2>
+            <p>Our top recommendation for comprehensive HVAC services with Lennox Premier Dealer status and veteran-owned commitment to excellence in the O'Fallon community.</p>
+            
+            <div class="featured-content">
+                <div class="featured-image">
+                    <img src="images/logos/home.webp" alt="Home Heating and Cooling logo" class="featured-logo" 
+                         onload="console.log('✅ Featured logo loaded successfully')" 
+                         onerror="console.log('⚠️ Featured logo issue, but continuing'); this.style.opacity='0.7';">
+                </div>
+                
+                <div class="featured-info">
+                    <h3>Why Home Heating and Cooling Stands Out</h3>
+                    <p>As the only Lennox Premier Dealer in O'Fallon with veteran ownership, Home Heating and Cooling provides unparalleled service quality combined with local community commitment. With a 4.9/5 rating from 582+ reviews and comprehensive HVAC services, they offer the expertise and reliability that O'Fallon homeowners need for optimal comfort.</p>
+                    
+                    <div class="featured-benefits">
+                        <div class="benefit">
+                            <h4>Lennox Premier Dealer</h4>
+                            <p>Highest tier certification ensuring expert installation and service</p>
+                        </div>
+                        
+                        <div class="benefit">
+                            <h4>Veteran-Owned Business</h4>
+                            <p>Local ownership with commitment to community and military families</p>
+                        </div>
+                        
+                        <div class="benefit">
+                            <h4>4.9/5 Rating</h4>
+                            <p>Outstanding customer satisfaction from 582+ verified reviews</p>
+                        </div>
+                        
+                        <div class="benefit">
+                            <h4>24/7 Emergency Service</h4>
+                            <p>Round-the-clock availability for urgent heating and cooling needs</p>
+                        </div>
+                    </div>
+                    
+                    <a href="https://weheatyourhome.com/" target="_blank" class="btn btn-primary">Visit Home Heating and Cooling</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <p>Common questions about HVAC services and choosing a heating and cooling contractor in the O'Fallon area.</p>
+            
+            <div class="faq-list">
+                <!-- FAQ items will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -434,13 +1035,13 @@
                     <p>For comprehensive HVAC services with Lennox Premier Dealer status and proven results, we recommend:</p>
                     <div class="premium-contact">
                         <img src="images/logos/home.webp" alt="Home Heating and Cooling logo" class="contact-logo" 
-                             onload="console.log('Contact logo loaded')" 
-                             onerror="console.error('Contact logo failed to load'); this.style.display = 'none';">
+                             onload="console.log('✅ Contact logo loaded successfully')" 
+                             onerror="console.log('⚠️ Contact logo issue, but continuing'); this.style.opacity='0.7';">
                         <div>
-                            <h4>Home Heating & Cooling</h4>
-                            <p><i class="fas fa-phone"></i> (618) 624-2535</p>
-                            <p><i class="fas fa-globe"></i> homeheatingstl.com</p>
-                            <p><i class="fas fa-award"></i> Lennox Premier Dealer</p>
+                            <h4>Home Heating and Cooling</h4>
+                            <p>Phone: (618) 416-0111</p>
+                            <p>Address: 1450 Frontage Rd, O'Fallon, IL 62269</p>
+                            <p>Website: <a href="https://weheatyourhome.com/" target="_blank">weheatyourhome.com</a></p>
                         </div>
                     </div>
                 </div>
@@ -448,13 +1049,13 @@
         </div>
     </section>
 
-    <!-- Footer will be injected by footer.js -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
                     <h3>O'Fallon HVAC Directory</h3>
-                    <p>Your guide to heating and cooling contractors in the 62269 area</p>
+                    <p>Your guide to heating and cooling services in the 62269 area</p>
                 </div>
                 
                 <div class="footer-links">
@@ -463,14 +1064,15 @@
                         <li><a href="#hero">Home</a></li>
                         <li><a href="#matcher">Find Your Match</a></li>
                         <li><a href="#comparison">Comparison Chart</a></li>
-                        <li><a href="#profiles">Contractor Profiles</a></li>
+                        <li><a href="#profiles">Company Profiles</a></li>
+                        <li><a href="#featured">Featured Company</a></li>
                         <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-disclaimer">
                     <h4>Disclaimer</h4>
-                    <p>This directory is for informational purposes only. Information is subject to change. Please contact individual HVAC contractors for the most current services, pricing, and availability. We are not affiliated with any contractor listed except our featured partner.</p>
+                    <p>This directory is for informational purposes only. Information is subject to change. Please contact individual HVAC companies for the most current services, pricing, and availability. We are not affiliated with any company listed except our featured partner.</p>
                 </div>
             </div>
             
@@ -480,12 +1082,620 @@
         </div>
     </footer>
 
-    <!-- Load Footer JavaScript -->
-    <script src="footer.js"></script>
-
+    <!-- JavaScript -->
     <script>
+        // Complete HVAC Companies Data for O'Fallon Area (16 companies)
+        const hvacData = [
+          {
+            id: "home-heating-cooling",
+            name: "Home Heating and Cooling",
+            type: "Full Service HVAC",
+            specialties: ["Lennox Premier Dealer", "24/7 Emergency Service", "Veteran-Owned", "Residential & Commercial"],
+            rating: 4.9,
+            reviews: 582,
+            website: "https://weheatyourhome.com/",
+            logo: "images/logos/home.webp",
+            address: "1450 Frontage Rd, O'Fallon, IL 62269",
+            phone: "(618) 416-0111",
+            isPremium: true,
+            brands: ["Lennox"],
+            emergencyService: true,
+            serviceArea: "O'Fallon + 30 mile radius",
+            specialServices: ["Indoor Air Quality", "Tankless Water Heaters", "Free Second Opinions"],
+            features: [
+              "Lennox Premier Dealer status",
+              "Veteran-owned and operated",
+              "24/7 emergency service availability",
+              "4.9/5 rating from 582+ reviews"
+            ],
+            amenities: [
+              "Free estimates on new systems",
+              "Military and veteran discounts",
+              "Comprehensive service area coverage",
+              "Professional installation teams"
+            ]
+          },
+          {
+            id: "belo-cooling-heating",
+            name: "BEL-O Cooling & Heating",
+            type: "Full Service HVAC",
+            specialties: ["Carrier Factory Authorized", "Commercial Services", "Plumbing", "Sheet Metal"],
+            rating: 4.8,
+            reviews: 245,
+            website: "https://belocooling.com/",
+            logo: "images/logos/belo.png",
+            address: "Lebanon, IL (Serves O'Fallon)",
+            phone: "(618) 400-0905",
+            isPremium: false,
+            brands: ["Carrier", "Rheem"],
+            emergencyService: true,
+            serviceArea: "Metro East region",
+            specialServices: ["Commercial Refrigeration", "Custom Sheet Metal", "Plumbing Services"],
+            features: [
+              "Carrier Factory Authorized Dealer",
+              "66 years in business since 1959",
+              "O'Fallon business license holder",
+              "100% satisfaction guarantee"
+            ],
+            amenities: [
+              "24/7 emergency service",
+              "Commercial and residential",
+              "Third-generation family business",
+              "BBB A+ rating"
+            ]
+          },
+          {
+            id: "action-mechanical",
+            name: "Action Mechanical Services",
+            type: "Full Service HVAC",
+            specialties: ["Family-Owned", "Woman-Owned", "Plumbing", "Water Heaters"],
+            rating: 4.7,
+            reviews: 89,
+            website: "https://actionservices.org/",
+            logo: "images/logos/action.avif",
+            address: "6700 Old Collinsville Rd, O'Fallon, IL 62269",
+            phone: "(618) 476-7750",
+            isPremium: false,
+            brands: ["Multiple Brands"],
+            emergencyService: true,
+            serviceArea: "O'Fallon and surrounding areas",
+            specialServices: ["Sump Pumps", "Water Heaters", "Plumbing"],
+            features: [
+              "Family-owned since 1989",
+              "Woman-owned business",
+              "24/7 emergency repairs",
+              "BBB A+ rating"
+            ],
+            amenities: [
+              "Over 30 years experience",
+              "Residential and commercial",
+              "Professional testimonials",
+              "Honest and fast service"
+            ]
+          },
+          {
+            id: "archway-cooling-heating",
+            name: "Archway Cooling & Heating",
+            type: "Residential Specialist",
+            specialties: ["Trane Dealer", "NATE Certified", "Geothermal", "Indoor Air Quality"],
+            rating: 4.9,
+            reviews: 218,
+            website: "https://archwaycooling.com/",
+            logo: "images/logos/archway.webp",
+            address: "620 E Grant St, Belleville, IL 62220",
+            phone: "(618) 234-2810",
+            isPremium: false,
+            brands: ["Trane", "GE Connect"],
+            emergencyService: true,
+            serviceArea: "Belleville to O'Fallon area",
+            specialServices: ["Geothermal Systems", "Heat Pumps", "Service Maintenance Plans"],
+            features: [
+              "Trane dealer with NATE certification",
+              "Family-owned since 1969",
+              "4.9-star Google rating",
+              "Emergency service available"
+            ],
+            amenities: [
+              "Free estimates for replacements",
+              "After-hours emergency service",
+              "Professional and friendly service",
+              "Strong customer testimonials"
+            ]
+          },
+          {
+            id: "ck-heating-cooling",
+            name: "C&K Heating & Cooling, Inc.",
+            type: "Full Service HVAC",
+            specialties: ["Geothermal", "Commercial", "Custom Sheet Metal", "Water Heaters"],
+            rating: 4.9,
+            reviews: 75,
+            website: "https://ckheatcool.com/",
+            logo: "images/logos/ck.webp",
+            address: "1116 Galaxy Drive, Lebanon, IL 62254",
+            phone: "(618) 537-8888",
+            isPremium: false,
+            brands: ["Lennox", "Carrier", "Trane", "Rheem"],
+            emergencyService: true,
+            serviceArea: "Explicitly serves 62269 ZIP code",
+            specialServices: ["Geothermal Heat Pumps", "Tankless Water Heaters", "Air/Water Purification"],
+            features: [
+              "Family-owned since 1992",
+              "33+ years of experience",
+              "Services all makes and models",
+              "Custom sheet metal fabrication"
+            ],
+            amenities: [
+              "Emergency services available",
+              "Free estimates",
+              "Commercial and residential",
+              "Strong customer loyalty"
+            ]
+          },
+          {
+            id: "certified-air",
+            name: "Certified Air Ltd.",
+            type: "Residential Specialist",
+            specialties: ["Air Conditioning Repair", "Local Service"],
+            rating: 4.2,
+            reviews: 15,
+            website: "https://www.facebook.com/certifiedairltd/",
+            logo: "images/logos/certifiedair.jpg",
+            address: "1710 Boul Ave, Swansea, IL 62226",
+            phone: "(618) 277-6036",
+            isPremium: false,
+            brands: ["Multiple Brands"],
+            emergencyService: false,
+            serviceArea: "Swansea to O'Fallon area",
+            specialServices: ["Air Conditioning Repair"],
+            features: [
+              "Local air conditioning specialists",
+              "Facebook-based customer service",
+              "Focused on repair services",
+              "Swansea-based serving area"
+            ],
+            amenities: [
+              "Local service focus",
+              "Air conditioning specialists",
+              "Community-based business",
+              "Repair-focused services"
+            ]
+          },
+          {
+            id: "classic-aire-care",
+            name: "Classic Aire Care",
+            type: "Full Service HVAC",
+            specialties: ["99 Years Experience", "Large Fleet", "Geothermal", "Commercial"],
+            rating: 4.6,
+            reviews: 87,
+            website: "https://classicairecare.com/",
+            logo: "images/logos/classicaire.webp",
+            address: "St. Louis, MO (Serves O'Fallon)",
+            phone: "(314) 329-1943",
+            isPremium: false,
+            brands: ["All Brands"],
+            emergencyService: true,
+            serviceArea: "Greater St. Louis including O'Fallon",
+            specialServices: ["Geothermal Maintenance", "Commercial Services", "Over 100 Vans"],
+            features: [
+              "Nearly 100 years in business",
+              "Over 100 vans on the road",
+              "NATE-certified technicians",
+              "Same-day service capability"
+            ],
+            amenities: [
+              "100% satisfaction guarantee",
+              "Comprehensive service network",
+              "Commercial and residential",
+              "Multiple service locations"
+            ]
+          },
+          {
+            id: "energy-stars",
+            name: "Energy Stars Heating & Cooling Co.",
+            type: "Installation Specialist",
+            specialties: ["Energy Efficiency", "Home Depot Partner", "Insulation", "Whole-Home Solutions"],
+            rating: 4.9,
+            reviews: 1097,
+            website: "https://estarshvac.com/",
+            logo: "images/logos/energystar.webp",
+            address: "Metro-East region (Serves O'Fallon)",
+            phone: "(618) 477-8337",
+            isPremium: false,
+            brands: ["YORK", "Rheem", "Trane"],
+            emergencyService: false,
+            serviceArea: "Metro-East Illinois including O'Fallon",
+            specialServices: ["Attic Insulation", "Air Sealing", "Crawl Space Encapsulation"],
+            features: [
+              "Home Depot preferred contractor",
+              "4.9-star Google rating from 1000+ reviews",
+              "Whole-home energy efficiency focus",
+              "BBB accredited"
+            ],
+            amenities: [
+              "Ameren Home Efficiency Program partner",
+              "Family-owned and operated",
+              "Energy efficiency specialists",
+              "Rebate assistance programs"
+            ]
+          },
+          {
+            id: "ernst-heating-cooling",
+            name: "Ernst Heating & Cooling",
+            type: "Full Service HVAC",
+            specialties: ["74+ Years Experience", "Geothermal Pioneer", "24/7 Emergency", "Boilers"],
+            rating: 5.0,
+            reviews: 65,
+            website: "https://ernstheating.com/",
+            logo: "images/logos/ernst.png",
+            address: "202 W State St, Hamel, IL 62046",
+            phone: "(618) 633-2244",
+            isPremium: false,
+            brands: ["Lennox", "GeoComfort", "Bosch", "Buderus"],
+            emergencyService: true,
+            serviceArea: "Metro East including O'Fallon",
+            specialServices: ["Geothermal Energy Systems", "Boiler Installation", "Energy Savings Agreements"],
+            features: [
+              "Over 74 years serving Metro East",
+              "First geothermal installer in area",
+              "5/5 rating on Angi",
+              "BBB A+ rating"
+            ],
+            amenities: [
+              "24-hour emergency service 365 days",
+              "Saturday hours available",
+              "Energy Savings Agreement plans",
+              "Geothermal specialists"
+            ]
+          },
+          {
+            id: "heritage-heating-cooling",
+            name: "Heritage Heating & Cooling",
+            type: "Residential Specialist",
+            specialties: ["American Standard Dealer", "Veteran-Operated", "Family-Owned", "Emergency Service"],
+            rating: 4.9,
+            reviews: 53,
+            website: "https://heritage-service.com/",
+            logo: "images/logos/heritage.png",
+            address: "97 Betty Lane, O'Fallon, IL 62269",
+            phone: "(618) 356-2781",
+            isPremium: false,
+            brands: ["American Standard"],
+            emergencyService: true,
+            serviceArea: "O'Fallon and surrounding areas",
+            specialServices: ["0% Financing Options", "Veteran Discounts", "All Brands Service"],
+            features: [
+              "American Standard Authorized Dealer",
+              "Veteran-operated family business",
+              "15+ years experience since 2011",
+              "100% customer satisfaction rating"
+            ],
+            amenities: [
+              "Open seven days a week",
+              "Free estimates on new equipment",
+              "Military and senior discounts",
+              "EPA-certified company"
+            ]
+          },
+          {
+            id: "hoffmann-brothers",
+            name: "Hoffmann Brothers",
+            type: "Full Service HVAC",
+            specialties: ["Multi-Service", "40+ Years", "Home Protection Plan", "St. Louis Based"],
+            rating: 4.7,
+            reviews: 38,
+            website: "https://hoffmannbros.com/",
+            logo: "images/logos/hoffman.png",
+            address: "St. Louis, MO with Edwardsville office",
+            phone: "(314) 664-3011",
+            isPremium: false,
+            brands: ["American Standard", "Mitsubishi", "Daikin", "Geocomfort"],
+            emergencyService: false,
+            serviceArea: "Greater St. Louis including O'Fallon",
+            specialServices: ["Plumbing", "Electrical", "Appliance Repair", "Home Protection Plans"],
+            features: [
+              "Over 40 years family-owned",
+              "HomeAdvisor Screened & Approved",
+              "Dedicated O'Fallon service page",
+              "Best Place to Work awards"
+            ],
+            amenities: [
+              "Comprehensive Home Protection Plan",
+              "Financing available",
+              "Multi-trade capabilities",
+              "Professional service standards"
+            ]
+          },
+          {
+            id: "kiefer-heating-cooling",
+            name: "Kiefer Heating & Cooling",
+            type: "Full Service HVAC",
+            specialties: ["95 Years Experience", "Geothermal Specialist", "Custom Ductwork", "Established 1930"],
+            rating: 5.0,
+            reviews: 45,
+            website: "https://kieferac.net/",
+            logo: "images/logos/kiefer.webp",
+            address: "140 Iowa Ave Suite 210, Belleville, IL 62220",
+            phone: "(618) 277-7744",
+            isPremium: false,
+            brands: ["All Makes and Models"],
+            emergencyService: true,
+            serviceArea: "Belleville to O'Fallon region",
+            specialServices: ["Geothermal Systems", "Custom Sheet Metal", "Complex Retrofits"],
+            features: [
+              "95 years in business since 1930",
+              "5/5 overall rating on Angi",
+              "Family-owned for generations",
+              "Geothermal heating and cooling specialists"
+            ],
+            amenities: [
+              "24/7 emergency service",
+              "Expert ductwork fabrication",
+              "Historic home specialists",
+              "Long-term customer loyalty"
+            ]
+          },
+          {
+            id: "mass-heating-air",
+            name: "M.A.S.S. Heating and Air",
+            type: "Residential Specialist",
+            specialties: ["Coleman Specialist", "24-Hour Emergency", "10-Year Warranty", "Family-Owned"],
+            rating: 4.8,
+            reviews: 28,
+            website: "https://massheatingandair.com/",
+            logo: "images/logos/mass.webp",
+            address: "229 Country Meadow Lane, Belleville, IL 62221",
+            phone: "(618) 530-9995",
+            isPremium: false,
+            brands: ["Coleman"],
+            emergencyService: true,
+            serviceArea: "Belleville to O'Fallon area",
+            specialServices: ["10-Year Parts and Labor Warranty", "Free Quotes"],
+            features: [
+              "BBB Accredited with A+ rating",
+              "100% recommendation rate",
+              "Coleman complete system specialists",
+              "24-hour emergency service"
+            ],
+            amenities: [
+              "Saturday appointments available",
+              "Free service quotes",
+              "Professional installation teams",
+              "Strong customer testimonials"
+            ]
+          },
+          {
+            id: "maintenance-man",
+            name: "Maintenance Man Heating & Cooling",
+            type: "Residential Specialist",
+            specialties: ["Local O'Fallon Business", "Standard Hours", "Multiple Systems", "Community Focus"],
+            rating: 4.5,
+            reviews: 12,
+            website: "https://mainmansvs.com/",
+            logo: "images/logos/maintenanceman.png",
+            address: "1010 Oaktree Ct, O'Fallon, IL 62269",
+            phone: "(618) 239-9122",
+            isPremium: false,
+            brands: ["Many Different Brands"],
+            emergencyService: false,
+            serviceArea: "O'Fallon local area",
+            specialServices: ["Air Conditioners", "Furnaces", "Heat Pumps", "Indoor Air Quality"],
+            features: [
+              "Local O'Fallon business",
+              "Works on many system types",
+              "Community-focused service",
+              "Standard business hours"
+            ],
+            amenities: [
+              "Monday-Friday 8 AM to 5 PM",
+              "Local business commitment",
+              "Multiple system expertise",
+              "Neighborhood service focus"
+            ]
+          },
+          {
+            id: "morrison-plumbing",
+            name: "Morrison Plumbing, Heating, Air & Electrical",
+            type: "Full Service HVAC",
+            specialties: ["Multi-Trade", "True 24-Hour Emergency", "All Makes & Models", "7600+ Reviews"],
+            rating: 4.9,
+            reviews: 7678,
+            website: "https://morrisonplumbing.com/",
+            logo: "images/logos/morrison.webp",
+            address: "8124B Bunkum Rd, Caseyville, IL 62232",
+            phone: "(618) 408-1446",
+            isPremium: false,
+            brands: ["All Makes & Models (30+ brands)"],
+            emergencyService: true,
+            serviceArea: "Metro East region including O'Fallon",
+            specialServices: ["Plumbing", "Electrical", "Generators", "EV Chargers"],
+            features: [
+              "4.9-star Google rating from 7600+ reviews",
+              "True 24-Hour Emergency Service",
+              "Over 30 years in Metro East",
+              "Services all makes and models"
+            ],
+            amenities: [
+              "BBB A+ rating",
+              "Multiple service options",
+              "Professional technician teams",
+              "Comprehensive home services"
+            ]
+          },
+          {
+            id: "the-hill-heating-cooling",
+            name: "The Hill Heating and Cooling LLC",
+            type: "Residential Specialist",
+            specialties: ["Veteran-Owned", "American Standard", "Free Estimates", "Military Discounts"],
+            rating: 5.0,
+            reviews: 10,
+            website: "https://thehillheatingandcooling.com/",
+            logo: "images/logos/thehill.png",
+            address: "99 South Mulberry Road, Collinsville, IL 62234",
+            phone: "(618) 477-4131",
+            isPremium: false,
+            brands: ["American Standard"],
+            emergencyService: false,
+            serviceArea: "Collinsville to O'Fallon area",
+            specialServices: ["0% Financing", "Military Discounts", "Senior Discounts"],
+            features: [
+              "Veteran-owned and operated",
+              "100% recommendation rate",
+              "American Standard products focus",
+              "Family-owned business"
+            ],
+            amenities: [
+              "Free estimates available",
+              "10% labor discount for veterans/military",
+              "Saturdays by appointment",
+              "First responder discounts"
+            ]
+          }
+        ];
+
+        // FAQ Data for HVAC
+        const faqData = [
+          {
+            question: "What should I do if my AC stops working in O'Fallon during a heatwave?",
+            answer: "If your AC stops working during O'Fallon's hot summer weather, first check your thermostat settings and circuit breaker. If those aren't the issue, contact an emergency AC repair service immediately. Several O'Fallon HVAC companies offer same-day emergency service, especially during peak summer months. Don't wait - with O'Fallon's humid summers reaching 90°F+, a broken AC can become dangerous quickly. Most emergency HVAC services in the 62269 area can respond within 2-4 hours during heatwaves."
+          },
+          {
+            question: "Which O'Fallon HVAC companies offer 24-hour emergency AC repair?",
+            answer: "Several O'Fallon HVAC contractors provide 24/7 emergency AC repair services, including evenings, weekends, and holidays. Companies like Bel-O, Morrison Heating & Cooling, Ernst Heating & Cooling, and Home Heating & Cooling offer round-the-clock emergency service to the O'Fallon area. During summer months, many also provide same-day service for urgent AC problems. When choosing an emergency HVAC service, look for licensed contractors with good reviews and guaranteed response times."
+          },
+          {
+            question: "How much does AC repair cost in O'Fallon, Illinois?",
+            answer: "AC repair costs in O'Fallon typically range from $150-$800 depending on the issue. Basic repairs like thermostat replacement or capacitor issues cost $150-$400. More complex problems like compressor replacement or refrigerant leaks range from $500-$2,000. Emergency after-hours service usually includes a $75-$150 premium. Many O'Fallon HVAC companies offer free estimates and diagnostic fees that are applied to repair costs. Always get multiple quotes for major repairs over $500."
+          },
+          {
+            question: "What's the cost to replace an air conditioner in O'Fallon?",
+            answer: "Central air conditioning replacement in O'Fallon typically costs $3,000-$8,000 for a complete system. Factors affecting price include home size, SEER rating, and ductwork condition. A basic 2-ton, 14 SEER unit costs around $3,500-$4,500 installed. High-efficiency 16+ SEER systems range from $5,000-$8,000. Many O'Fallon HVAC dealers offer financing options, rebates, and military discounts. Get quotes from multiple licensed contractors and compare warranties, not just price."
+          },
+          {
+            question: "Are there financing options for HVAC installation in O'Fallon?",
+            answer: "Yes, most O'Fallon HVAC companies offer financing options for new installations and major repairs. Common options include 0% interest for 12-24 months, extended payment plans, and rent-to-own programs. Many contractors work with lending partners like GreenSky or offer manufacturer financing through brands like Lennox and Carrier. Some also provide seasonal promotions with special financing rates. Veterans and military families near Scott Air Force Base may qualify for additional discounts."
+          },
+          {
+            question: "Which areas around O'Fallon do HVAC companies service?",
+            answer: "O'Fallon HVAC companies typically service the entire Metro East region, including Shiloh, Belleville, Fairview Heights, Swansea, and surrounding areas. Most cover the 62269, 62221, and 62208 zip codes. Service areas often extend to Scott Air Force Base, Green Mount Road corridor, and Highway 50 businesses. Some larger companies service up to 30 miles from O'Fallon, reaching into St. Louis County. Always confirm service area coverage when scheduling, especially for emergency calls."
+          },
+          {
+            question: "How does O'Fallon's humid summer weather affect my AC system?",
+            answer: "O'Fallon's humid summers put extra strain on AC systems. High humidity forces your AC to work harder to remove moisture from the air, increasing energy costs and wear on components. The combination of 90°F+ temperatures and 70%+ humidity is particularly challenging for older systems. Common issues include frozen coils, overworked compressors, and increased condensation problems. Regular maintenance and properly sized equipment are crucial for handling O'Fallon's demanding summer climate."
+          },
+          {
+            question: "What are the best AC brands available from O'Fallon HVAC dealers?",
+            answer: "Top AC brands available from O'Fallon HVAC dealers include Lennox, Carrier, Trane, Goodman, and Rheem. Lennox and Carrier are popular premium choices with excellent warranties and efficiency ratings. Trane offers reliable mid-range options, while Goodman provides good value for budget-conscious buyers. Many O'Fallon dealers are Factory Authorized for specific brands, ensuring proper installation and warranty coverage. Choose based on your budget, efficiency needs, and the dealer's expertise with that brand."
+          },
+          {
+            question: "Where can I find a Lennox dealer in O'Fallon, Illinois?",
+            answer: "Home Heating and Cooling in O'Fallon is a Lennox Premier Dealer, offering the highest level of training and customer service. Lennox Premier Dealers offer the highest level of training and customer service. They stock Lennox parts, provide factory warranties, and have certified technicians. To find current Lennox dealers in O'Fallon, check the Lennox dealer locator or call local HVAC companies to verify their authorization status."
+          },
+          {
+            question: "Which O'Fallon HVAC companies are Carrier Factory Authorized dealers?",
+            answer: "BEL-O Cooling & Heating is a Carrier Factory Authorized dealer serving the O'Fallon area. Factory Authorized dealers meet strict standards for installation, service, and customer satisfaction. They offer genuine Carrier parts, extended warranties, and trained technicians. These dealers also provide access to Carrier's financing programs and rebates. Always verify current authorization status when choosing a Carrier dealer, as certifications can change."
+          },
+          {
+            question: "How do I choose the best HVAC company in O'Fallon?",
+            answer: "Choose the best O'Fallon HVAC company by checking licensing, insurance, and Better Business Bureau ratings. Look for companies with local presence, good Google reviews, and manufacturer certifications. Get multiple quotes and compare warranties, not just prices. Ask about response times, emergency service availability, and technician training. The best HVAC contractors in O'Fallon will provide detailed estimates, explain options clearly, and offer guarantees on their work."
+          },
+          {
+            question: "Which O'Fallon HVAC companies offer same-day service?",
+            answer: "Many O'Fallon HVAC companies offer same-day service, especially during summer months. Companies like BEL-O, Morrison Plumbing Heating Air & Electrical, and Home Heating and Cooling prioritize quick response times. Same-day service is typically available for emergency repairs, system diagnostics, and urgent maintenance. During peak summer season, call early in the day for best same-day availability. Some companies charge premium rates for same-day service, while others include it in their standard pricing."
+          },
+          {
+            question: "How often should I have my AC serviced in O'Fallon's hot climate?",
+            answer: "In O'Fallon's demanding summer climate, have your AC serviced twice yearly - once in spring before peak season and once in fall. Annual maintenance should include filter changes, coil cleaning, refrigerant level checks, and system inspections. During heavy use months (June-August), check filters monthly and schedule service if you notice reduced cooling or increased energy bills. Regular maintenance is crucial in O'Fallon's humid climate to prevent breakdowns during peak summer heat."
+          },
+          {
+            question: "What HVAC maintenance should O'Fallon homeowners do before summer?",
+            answer: "Before O'Fallon's summer heat arrives, change air filters, clean outdoor units, and schedule professional tune-ups. Check thermostat settings, inspect ductwork for leaks, and ensure vents aren't blocked. Have technicians check refrigerant levels, clean coils, and test system controls. Spring maintenance prevents summer breakdowns when O'Fallon temperatures reach 90°F+. Most O'Fallon HVAC companies offer pre-season maintenance specials in March and April."
+          },
+          {
+            question: "How can I reduce my cooling costs in O'Fallon summers?",
+            answer: "Reduce O'Fallon cooling costs by upgrading to a high-efficiency AC system, sealing air leaks, and using programmable thermostats. Set thermostats to 78°F when home, 85°F when away. Use ceiling fans to feel cooler at higher temperatures. Regular maintenance keeps systems efficient, and newer high-SEER units can cut cooling costs by 20-40%. Many O'Fallon utility companies offer rebates for energy-efficient HVAC upgrades."
+          },
+          {
+            question: "What SEER rating should I choose for an AC in O'Fallon, Illinois?",
+            answer: "For O'Fallon's climate, choose at least 16 SEER for good efficiency and comfort. Higher ratings (18-20+ SEER) provide better humidity control and energy savings during long summer seasons. While 14 SEER is the minimum standard, 16+ SEER units handle O'Fallon's humid summers more effectively. The higher upfront cost is typically recovered through lower energy bills within 5-7 years. Many O'Fallon HVAC dealers offer rebates for high-efficiency systems."
+          },
+          {
+            question: "Are there veteran-owned HVAC companies in O'Fallon?",
+            answer: "Yes, several veteran-owned HVAC companies serve O'Fallon and the Scott Air Force Base area. These businesses often provide military discounts and understand the unique needs of military families. Veteran-owned contractors typically offer reliable service and competitive pricing. To find current veteran-owned HVAC companies in O'Fallon, check local business directories or ask for recommendations from other military families in the area."
+          },
+          {
+            question: "Do O'Fallon HVAC companies offer military discounts?",
+            answer: "Many O'Fallon HVAC companies offer military discounts, especially given the proximity to Scott Air Force Base. Discounts typically range from 10-20% off services and installations. Some companies extend discounts to veterans, active duty, and military families. Always ask about military discounts when getting quotes - many contractors offer them but don't always advertise them. Some also provide special financing rates for military customers."
+          },
+          {
+            question: "Why does my AC keep running but not cooling in O'Fallon heat?",
+            answer: "If your AC runs constantly but doesn't cool your O'Fallon home, likely causes include dirty filters, low refrigerant, frozen coils, or an undersized system. During extreme heat days (90°F+), even properly functioning ACs may struggle to keep up. Check and replace filters first, then call for professional diagnosis. In O'Fallon's humid climate, ice formation on coils is common and requires professional attention. Don't ignore this issue - it can lead to compressor damage."
+          },
+          {
+            question: "What causes AC refrigerant leaks in O'Fallon homes?",
+            answer: "AC refrigerant leaks in O'Fallon homes often result from age, corrosion, or poor installation. O'Fallon's humid climate can accelerate copper line corrosion, especially on outdoor components. Vibration from normal operation, manufacturing defects, or damage during maintenance can also cause leaks. Signs include reduced cooling, ice on coils, or hissing sounds. Refrigerant leaks require professional repair - it's illegal for homeowners to handle refrigerant, and leaks indicate underlying problems that need expert attention."
+          }
+        ];
+
+        // BULLETPROOF INITIALIZATION
+        function initializeSite() {
+            console.log('🚀 Starting HVAC site initialization...');
+            console.log('📊 HVAC data loaded:', hvacData.length, 'companies');
+            console.log('❓ FAQ data loaded:', faqData.length, 'questions');
+            
+            // Debug logo paths
+            console.log('🖼️ Logo paths check:');
+            hvacData.forEach(company => {
+                console.log(`${company.name}: ${company.logo}`);
+            });
+            
+            try {
+                initializeNavigation();
+                console.log('✅ Navigation initialized');
+                
+                populateComparisonTable();
+                console.log('✅ Comparison table populated');
+                
+                populateCompanyProfiles();
+                console.log('✅ Company profiles populated');
+                
+                setupFilters();
+                console.log('✅ Filters initialized');
+                
+                setupMatcher();
+                console.log('✅ Matcher initialized');
+                
+                populateFAQSection();
+                console.log('✅ FAQ section populated');
+                
+                console.log('🎉 HVAC site initialization complete!');
+                
+            } catch (error) {
+                console.error('❌ Error during initialization:', error);
+            }
+        }
+
+        // Multiple initialization triggers
+        document.addEventListener('DOMContentLoaded', initializeSite);
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeSite);
+        } else {
+            initializeSite();
+        }
+        
+        window.addEventListener('load', function() {
+            setTimeout(initializeSite, 100);
+        });
+        
+        setTimeout(function() {
+            if (!document.querySelector('#comparison-table tbody tr')) {
+                console.log('🔄 Fallback initialization triggered');
+                initializeSite();
+            }
+        }, 500);
+
         // Navigation functionality
-        document.addEventListener('DOMContentLoaded', function() {
+        function initializeNavigation() {
             const menuToggle = document.querySelector('.menu-toggle');
             const navMenu = document.querySelector('nav ul');
             
@@ -497,19 +1707,713 @@
                 });
             }
             
-            // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        if (navMenu.classList.contains('active')) {
+                            navMenu.classList.remove('active');
+                            menuToggle.querySelectorAll('span').forEach(span => span.classList.remove('active'));
+                        }
+                        
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
                             behavior: 'smooth'
                         });
                     }
                 });
             });
-        });
+        }
+
+        // Populate comparison table
+        function populateComparisonTable() {
+            const tableBody = document.querySelector('#comparison-table tbody');
+            if (!tableBody) {
+                console.warn('⚠️ Comparison table tbody not found');
+                return;
+            }
+            
+            tableBody.innerHTML = '';
+            
+            // Sort companies: premium first, then by rating
+            const sortedCompanies = [...hvacData].sort((a, b) => {
+                if (a.isPremium && !b.isPremium) return -1;
+                if (!a.isPremium && b.isPremium) return 1;
+                
+                const ratingA = a.rating || 0;
+                const ratingB = b.rating || 0;
+                
+                if (ratingA !== ratingB) {
+                    return ratingB - ratingA;
+                }
+                
+                return a.name.localeCompare(b.name);
+            });
+            
+            sortedCompanies.forEach(company => {
+                const row = document.createElement('tr');
+                if (company.isPremium) {
+                    row.classList.add('premium-row');
+                }
+                
+                // Company name cell
+                const nameCell = document.createElement('td');
+                nameCell.classList.add('company-name-cell');
+                
+                const nameWrapper = document.createElement('div');
+                nameWrapper.classList.add('name-wrapper');
+                
+                const logo = document.createElement('img');
+                logo.src = company.logo;
+                logo.alt = `${company.name} Logo`;
+                logo.classList.add('company-logo-small');
+                logo.loading = 'lazy';
+                
+                // Simple logo loading handler
+                logo.onload = function() {
+                    console.log(`✅ Logo loaded: ${this.src}`);
+                };
+                
+                logo.onerror = function() {
+                    console.log(`❌ Failed to load logo: ${this.src}`);
+                    // Simple retry once
+                    if (!this.dataset.retried) {
+                        this.dataset.retried = 'true';
+                        setTimeout(() => {
+                            this.src = this.src + '?retry=' + Date.now();
+                        }, 100);
+                        return;
+                    }
+                    this.style.display = 'none';
+                };
+                
+                nameWrapper.appendChild(logo);
+                
+                const nameSpan = document.createElement('span');
+                nameSpan.textContent = company.name;
+                nameWrapper.appendChild(nameSpan);
+                
+                if (company.isPremium) {
+                    const badge = document.createElement('span');
+                    badge.classList.add('premium-badge');
+                    badge.textContent = 'Preferred';
+                    badge.style.fontSize = '0.7rem';
+                    badge.style.padding = '2px 8px';
+                    badge.style.marginLeft = '8px';
+                    nameWrapper.appendChild(badge);
+                }
+                
+                nameCell.appendChild(nameWrapper);
+                row.appendChild(nameCell);
+                
+                // Service type cell
+                const typeCell = document.createElement('td');
+                typeCell.textContent = company.type;
+                row.appendChild(typeCell);
+                
+                // Emergency service cell
+                const emergencyCell = document.createElement('td');
+                emergencyCell.textContent = company.emergencyService ? '24/7 Available' : 'Business Hours';
+                row.appendChild(emergencyCell);
+                
+                // Primary brands cell
+                const brandsCell = document.createElement('td');
+                brandsCell.textContent = company.brands.slice(0, 2).join(', ');
+                row.appendChild(brandsCell);
+                
+                // Specialties cell
+                const specialtiesCell = document.createElement('td');
+                specialtiesCell.textContent = company.specialties.slice(0, 2).join(', ');
+                row.appendChild(specialtiesCell);
+                
+                // Rating cell
+                const ratingCell = document.createElement('td');
+                
+                if (company.rating) {
+                    const ratingDiv = document.createElement('div');
+                    ratingDiv.classList.add('star-rating');
+                    
+                    const fullStars = Math.floor(company.rating);
+                    const hasHalfStar = company.rating % 1 >= 0.5;
+                    
+                    for (let i = 0; i < 5; i++) {
+                        const star = document.createElement('i');
+                        
+                        if (i < fullStars) {
+                            star.className = 'fas fa-star';
+                        } else if (i === fullStars && hasHalfStar) {
+                            star.className = 'fas fa-star-half-alt';
+                        } else {
+                            star.className = 'far fa-star';
+                        }
+                        
+                        ratingDiv.appendChild(star);
+                    }
+                    
+                    const ratingText = document.createElement('div');
+                    ratingText.textContent = `${company.rating} (${company.reviews} reviews)`;
+                    
+                    ratingCell.appendChild(ratingDiv);
+                    ratingCell.appendChild(ratingText);
+                } else {
+                    ratingCell.textContent = 'No rating';
+                }
+                
+                row.appendChild(ratingCell);
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Populate company profiles
+        function populateCompanyProfiles() {
+            const profilesContainer = document.getElementById('company-profiles');
+            if (!profilesContainer) {
+                console.warn('⚠️ Company profiles container not found');
+                return;
+            }
+            
+            profilesContainer.innerHTML = '';
+            
+            // Sort companies: premium first, then by rating
+            const sortedCompanies = [...hvacData].sort((a, b) => {
+                if (a.isPremium && !b.isPremium) return -1;
+                if (!a.isPremium && b.isPremium) return 1;
+                
+                const ratingA = a.rating || 0;
+                const ratingB = b.rating || 0;
+                
+                if (ratingA !== ratingB) {
+                    return ratingB - ratingA;
+                }
+                
+                return a.name.localeCompare(b.name);
+            });
+            
+            sortedCompanies.forEach(company => {
+                const profileCard = document.createElement('div');
+                profileCard.className = 'profile-card';
+                if (company.isPremium) {
+                    profileCard.classList.add('premium-card');
+                }
+                
+                // Profile header
+                const profileHeader = document.createElement('div');
+                profileHeader.className = 'profile-header';
+                
+                const logoImg = document.createElement('img');
+                logoImg.src = company.logo;
+                logoImg.alt = `${company.name} logo`;
+                logoImg.className = 'profile-logo';
+                
+                // Simple loading handler for profile logos
+                logoImg.onload = function() {
+                    console.log(`✅ Profile logo loaded: ${this.src}`);
+                };
+                
+                logoImg.onerror = function() {
+                    console.log(`❌ Failed to load profile logo: ${this.src}`);
+                    // Simple retry
+                    if (!this.dataset.retried) {
+                        this.dataset.retried = 'true';
+                        setTimeout(() => {
+                            this.src = this.src + '?retry=' + Date.now();
+                        }, 100);
+                        return;
+                    }
+                    this.style.display = 'none';
+                };
+                
+                const profileTitle = document.createElement('div');
+                profileTitle.className = 'profile-title';
+                
+                const nameHeading = document.createElement('h3');
+                nameHeading.textContent = company.name;
+                if (company.isPremium) {
+                    const premiumBadge = document.createElement('span');
+                    premiumBadge.className = 'premium-badge';
+                    premiumBadge.textContent = 'Preferred';
+                    premiumBadge.style.fontSize = '0.7rem';
+                    premiumBadge.style.padding = '2px 8px';
+                    premiumBadge.style.marginLeft = '8px';
+                    nameHeading.appendChild(premiumBadge);
+                }
+                
+                const typeText = document.createElement('div');
+                typeText.className = 'profile-type';
+                typeText.textContent = company.type;
+                
+                profileTitle.appendChild(nameHeading);
+                profileTitle.appendChild(typeText);
+                
+                profileHeader.appendChild(logoImg);
+                profileHeader.appendChild(profileTitle);
+                
+                // Profile body
+                const profileBody = document.createElement('div');
+                profileBody.className = 'profile-body';
+                
+                // Specialties info
+                const specialtiesInfo = document.createElement('div');
+                specialtiesInfo.className = 'profile-info';
+                
+                const specialtiesHeading = document.createElement('h4');
+                specialtiesHeading.textContent = 'Specialties';
+                
+                const specialtiesList = document.createElement('ul');
+                
+                company.specialties.forEach(specialty => {
+                    const specialtyItem = document.createElement('li');
+                    specialtyItem.textContent = specialty;
+                    specialtiesList.appendChild(specialtyItem);
+                });
+                
+                specialtiesInfo.appendChild(specialtiesHeading);
+                specialtiesInfo.appendChild(specialtiesList);
+                
+                // Brands info
+                const brandsInfo = document.createElement('div');
+                brandsInfo.className = 'profile-info';
+                
+                const brandsHeading = document.createElement('h4');
+                brandsHeading.textContent = 'Equipment Brands';
+                
+                const brandsList = document.createElement('ul');
+                
+                company.brands.forEach(brand => {
+                    const brandItem = document.createElement('li');
+                    brandItem.textContent = brand;
+                    brandsList.appendChild(brandItem);
+                });
+                
+                brandsInfo.appendChild(brandsHeading);
+                brandsInfo.appendChild(brandsList);
+                
+                // Features info
+                const featuresInfo = document.createElement('div');
+                featuresInfo.className = 'profile-info';
+                
+                const featuresHeading = document.createElement('h4');
+                featuresHeading.textContent = 'Key Features';
+                
+                const featuresList = document.createElement('ul');
+                
+                company.features.forEach(feature => {
+                    const featureItem = document.createElement('li');
+                    featureItem.textContent = feature;
+                    featuresList.appendChild(featureItem);
+                });
+                
+                featuresInfo.appendChild(featuresHeading);
+                featuresInfo.appendChild(featuresList);
+                
+                profileBody.appendChild(specialtiesInfo);
+                profileBody.appendChild(brandsInfo);
+                profileBody.appendChild(featuresInfo);
+                
+                // Profile footer
+                const profileFooter = document.createElement('div');
+                profileFooter.className = 'profile-footer';
+                
+                const ratingDiv = document.createElement('div');
+                ratingDiv.className = 'profile-rating';
+                
+                if (company.rating) {
+                    const ratingStars = document.createElement('div');
+                    ratingStars.className = 'star-rating';
+                    
+                    const fullStars = Math.floor(company.rating);
+                    const hasHalfStar = company.rating % 1 >= 0.5;
+                    
+                    for (let i = 0; i < fullStars; i++) {
+                        ratingStars.innerHTML += '★';
+                    }
+                    
+                    if (hasHalfStar) {
+                        ratingStars.innerHTML += '½';
+                    }
+                    
+                    const ratingText = document.createElement('span');
+                    ratingText.textContent = `${company.rating} (${company.reviews} reviews)`;
+                    
+                    ratingDiv.appendChild(ratingStars);
+                    ratingDiv.appendChild(ratingText);
+                } else {
+                    ratingDiv.textContent = 'No rating';
+                }
+                
+                const linkDiv = document.createElement('div');
+                linkDiv.className = 'profile-link';
+                
+                const websiteLink = document.createElement('a');
+                websiteLink.href = company.website;
+                websiteLink.target = '_blank';
+                websiteLink.textContent = 'Visit Website';
+                
+                linkDiv.appendChild(websiteLink);
+                
+                profileFooter.appendChild(ratingDiv);
+                profileFooter.appendChild(linkDiv);
+                
+                // Assemble profile card
+                profileCard.appendChild(profileHeader);
+                profileCard.appendChild(profileBody);
+                profileCard.appendChild(profileFooter);
+                
+                profilesContainer.appendChild(profileCard);
+            });
+        }
+
+        // Setup filter functionality
+        function setupFilters() {
+            const typeFilter = document.getElementById('type-filter');
+            const serviceFilter = document.getElementById('service-filter');
+            const brandFilter = document.getElementById('brand-filter');
+            
+            if (!typeFilter || !serviceFilter || !brandFilter) {
+                console.warn('⚠️ Filter elements not found');
+                return;
+            }
+            
+            const applyFilters = () => {
+                const typeValue = typeFilter.value;
+                const serviceValue = serviceFilter.value;
+                const brandValue = brandFilter.value;
+                
+                const filteredCompanies = hvacData.filter(company => {
+                    // Type filter
+                    if (typeValue !== 'all') {
+                        let typeMatch = false;
+                        
+                        switch(typeValue) {
+                            case 'residential-service':
+                                // Combines Full Service HVAC + Residential Specialist
+                                typeMatch = company.type.includes('Full Service HVAC') || 
+                                           company.type.includes('Residential Specialist');
+                                break;
+                            case 'commercial-services':
+                                // Companies that mention commercial work in specialties or features
+                                const hasCommercial = company.specialties.some(specialty => 
+                                    specialty.toLowerCase().includes('commercial')) ||
+                                    company.features.some(feature => 
+                                    feature.toLowerCase().includes('commercial')) ||
+                                    company.specialServices.some(service => 
+                                    service.toLowerCase().includes('commercial'));
+                                typeMatch = hasCommercial;
+                                break;
+                            default:
+                                typeMatch = company.type.toLowerCase().includes(typeValue);
+                        }
+                        
+                        if (!typeMatch) return false;
+                    }
+                    
+                    // Service filter
+                    if (serviceValue !== 'all') {
+                        if (serviceValue === 'emergency-24-7' && !company.emergencyService) return false;
+                    }
+                    
+                    // Brand filter
+                    if (brandValue !== 'all') {
+                        const companyBrands = company.brands.map(brand => brand.toLowerCase());
+                        let brandMatch = false;
+                        
+                        switch(brandValue) {
+                            case 'lennox':
+                                brandMatch = companyBrands.some(brand => brand.includes('lennox'));
+                                break;
+                            case 'carrier':
+                                brandMatch = companyBrands.some(brand => brand.includes('carrier'));
+                                break;
+                            case 'trane':
+                                brandMatch = companyBrands.some(brand => brand.includes('trane'));
+                                break;
+                            case 'goodman':
+                                brandMatch = companyBrands.some(brand => brand.includes('goodman'));
+                                break;
+                            default:
+                                brandMatch = companyBrands.some(brand => brand.includes(brandValue));
+                        }
+                        
+                        if (!brandMatch) return false;
+                    }
+                    
+                    return true;
+                });
+                
+                // Update the table with filtered data
+                updateTableWithFilteredData(filteredCompanies);
+            };
+            
+            typeFilter.addEventListener('change', applyFilters);
+            serviceFilter.addEventListener('change', applyFilters);
+            brandFilter.addEventListener('change', applyFilters);
+        }
+
+        function updateTableWithFilteredData(filteredCompanies) {
+            const tableBody = document.querySelector('#comparison-table tbody');
+            tableBody.innerHTML = '';
+            
+            filteredCompanies.forEach(company => {
+                const row = document.createElement('tr');
+                if (company.isPremium) {
+                    row.classList.add('premium-row');
+                }
+                
+                // Create cells similar to populateComparisonTable
+                const nameCell = document.createElement('td');
+                nameCell.classList.add('company-name-cell');
+                
+                const nameWrapper = document.createElement('div');
+                nameWrapper.classList.add('name-wrapper');
+                
+                const logo = document.createElement('img');
+                logo.src = company.logo;
+                logo.alt = `${company.name} Logo`;
+                logo.classList.add('company-logo-small');
+                logo.loading = 'lazy';
+                
+                // Simple logo loading handler
+                logo.onload = function() {
+                    console.log(`✅ Filtered logo loaded: ${this.src}`);
+                };
+                
+                logo.onerror = function() {
+                    console.log(`❌ Failed to load filtered logo: ${this.src}`);
+                    // Simple retry once
+                    if (!this.dataset.retried) {
+                        this.dataset.retried = 'true';
+                        setTimeout(() => {
+                            this.src = this.src + '?retry=' + Date.now();
+                        }, 100);
+                        return;
+                    }
+                    this.style.display = 'none';
+                };
+                
+                nameWrapper.appendChild(logo);
+                
+                const nameSpan = document.createElement('span');
+                nameSpan.textContent = company.name;
+                nameWrapper.appendChild(nameSpan);
+                
+                if (company.isPremium) {
+                    const badge = document.createElement('span');
+                    badge.classList.add('premium-badge');
+                    badge.textContent = 'Preferred';
+                    badge.style.fontSize = '0.7rem';
+                    badge.style.padding = '2px 8px';
+                    badge.style.marginLeft = '8px';
+                    nameWrapper.appendChild(badge);
+                }
+                
+                nameCell.appendChild(nameWrapper);
+                row.appendChild(nameCell);
+                
+                // Add other cells
+                const typeCell = document.createElement('td');
+                typeCell.textContent = company.type;
+                row.appendChild(typeCell);
+                
+                const emergencyCell = document.createElement('td');
+                emergencyCell.textContent = company.emergencyService ? '24/7 Available' : 'Business Hours';
+                row.appendChild(emergencyCell);
+                
+                const brandsCell = document.createElement('td');
+                brandsCell.textContent = company.brands.slice(0, 2).join(', ');
+                row.appendChild(brandsCell);
+                
+                const specialtiesCell = document.createElement('td');
+                specialtiesCell.textContent = company.specialties.slice(0, 2).join(', ');
+                row.appendChild(specialtiesCell);
+                
+                const ratingCell = document.createElement('td');
+                if (company.rating) {
+                    const ratingText = `${company.rating} (${company.reviews} reviews)`;
+                    ratingCell.textContent = ratingText;
+                } else {
+                    ratingCell.textContent = 'No rating';
+                }
+                row.appendChild(ratingCell);
+                
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Setup matcher functionality
+        function setupMatcher() {
+            const questions = document.querySelectorAll('.matcher-question');
+            const result = document.getElementById('matcher-result');
+            const resultContent = document.getElementById('result-content');
+            const restartButton = document.getElementById('restart-matcher');
+            
+            if (!questions.length || !result || !resultContent || !restartButton) {
+                console.warn('⚠️ Matcher elements not found');
+                return;
+            }
+            
+            let currentQuestion = 0;
+            const answers = {};
+            
+            questions.forEach((question, index) => {
+                const options = question.querySelectorAll('.matcher-option');
+                
+                options.forEach(option => {
+                    option.addEventListener('click', () => {
+                        answers[`question${index + 1}`] = option.getAttribute('data-value');
+                        
+                        question.classList.remove('active');
+                        
+                        if (index < questions.length - 1) {
+                            questions[index + 1].classList.add('active');
+                            currentQuestion = index + 1;
+                        } else {
+                            showMatcherResult();
+                            result.classList.add('active');
+                        }
+                    });
+                });
+            });
+            
+            restartButton.addEventListener('click', () => {
+                for (let key in answers) {
+                    delete answers[key];
+                }
+                
+                result.classList.remove('active');
+                
+                questions.forEach(q => q.classList.remove('active'));
+                questions[0].classList.add('active');
+                currentQuestion = 0;
+            });
+            
+            function showMatcherResult() {
+                let bestMatch;
+                
+                // Enhanced matching algorithm based on answers
+                if (answers.question1 === 'emergency' && answers.question2 === 'immediate') {
+                    // Emergency service needed - recommend 24/7 companies
+                    bestMatch = hvacData.find(company => company.id === 'morrison-plumbing') ||
+                               hvacData.find(company => company.id === 'belo-cooling-heating') ||
+                               hvacData.find(company => company.emergencyService);
+                } else if (answers.question1 === 'installation' || answers.question1 === 'replacement') {
+                    // Installation needed - recommend premier dealers
+                    bestMatch = hvacData.find(company => company.id === 'home-heating-cooling') ||
+                               hvacData.find(company => company.brands.includes('Lennox'));
+                } else if (answers.question3 === 'premium') {
+                    // Premium service wanted - recommend premier companies
+                    bestMatch = hvacData.find(company => company.id === 'home-heating-cooling') ||
+                               hvacData.find(company => company.isPremium);
+                } else if (answers.question3 === 'budget') {
+                    // Budget-conscious - recommend value options
+                    bestMatch = hvacData.find(company => company.id === 'maintenance-man') ||
+                               hvacData.find(company => company.type.includes('Residential'));
+                } else {
+                    // Default to featured company
+                    bestMatch = hvacData.find(company => company.id === 'home-heating-cooling');
+                }
+                
+                if (!bestMatch) {
+                    bestMatch = hvacData.find(company => company.id === 'home-heating-cooling');
+                }
+                
+                // Create result content
+                resultContent.innerHTML = '';
+                
+                const resultCard = document.createElement('div');
+                resultCard.className = 'profile-card';
+                if (bestMatch.isPremium) {
+                    resultCard.classList.add('premium-card');
+                }
+                
+                resultCard.innerHTML = `
+                    <div class="profile-header">
+                        <img src="${bestMatch.logo}" alt="${bestMatch.name} logo" class="profile-logo">
+                        <div class="profile-title">
+                            <h3>${bestMatch.name}${bestMatch.isPremium ? '<span class="premium-badge" style="font-size: 0.7rem; padding: 2px 8px; margin-left: 8px;">Preferred</span>' : ''}</h3>
+                            <div class="profile-type">${bestMatch.type}</div>
+                        </div>
+                    </div>
+                    <div class="profile-body">
+                        <p>Based on your needs, <strong>${bestMatch.name}</strong> is your ideal HVAC contractor match!</p>
+                        <div class="profile-info">
+                            <h4>Why this match:</h4>
+                            <ul>
+                                ${bestMatch.features.map(feature => `<li>${feature}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="profile-info">
+                            <h4>Contact Information:</h4>
+                            <p><strong>Phone:</strong> ${bestMatch.phone}</p>
+                            <p><strong>Address:</strong> ${bestMatch.address}</p>
+                        </div>
+                        <a href="${bestMatch.website}" target="_blank" class="btn btn-primary" style="margin-top: 20px; display: inline-block;">Visit ${bestMatch.name}</a>
+                    </div>
+                `;
+                
+                resultContent.appendChild(resultCard);
+            }
+        }
+
+        // Populate FAQ section
+        function populateFAQSection() {
+            const faqList = document.querySelector('.faq-list');
+            if (!faqList || !faqData) {
+                console.warn('⚠️ FAQ container not found');
+                return;
+            }
+            
+            faqList.innerHTML = '';
+            
+            faqData.forEach((faq, index) => {
+                const faqItem = document.createElement('div');
+                faqItem.classList.add('faq-item');
+                
+                const faqQuestion = document.createElement('div');
+                faqQuestion.classList.add('faq-question');
+                
+                const faqQuestionText = document.createElement('h3');
+                faqQuestionText.textContent = faq.question;
+                faqQuestion.appendChild(faqQuestionText);
+                
+                const faqToggle = document.createElement('span');
+                faqToggle.classList.add('faq-toggle');
+                faqToggle.textContent = '+';
+                faqQuestion.appendChild(faqToggle);
+                
+                faqItem.appendChild(faqQuestion);
+                
+                const faqAnswer = document.createElement('div');
+                faqAnswer.classList.add('faq-answer');
+                
+                const faqAnswerContent = document.createElement('p');
+                faqAnswerContent.textContent = faq.answer;
+                faqAnswer.appendChild(faqAnswerContent);
+                
+                faqItem.appendChild(faqAnswer);
+                
+                // Add click event
+                faqQuestion.addEventListener('click', function() {
+                    // Close other items
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        if (item !== faqItem && item.classList.contains('active')) {
+                            item.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    faqItem.classList.toggle('active');
+                });
+                
+                faqList.appendChild(faqItem);
+            });
+            
+            console.log('✅ FAQ section populated with', faqData.length, 'questions');
+        }
     </script>
 </body>
 </html>
