@@ -73,15 +73,15 @@ const crossNavHTML = `
                 </p>
             </a>
             
-            <!-- HVAC (Current Site) -->
+            <!-- HVAC (Current Site) - UPDATED COLORS -->
             <a href="https://ofallonhvac.com" class="dir-card hvac" 
-               style="background: white; padding: 25px; border-radius: 10px; text-decoration: none; color: #333; transition: all 0.3s ease; box-shadow: 0 2px 15px rgba(0,0,0,0.1); border-left: 5px solid #3182ce; display: block; position: relative;">
+               style="background: white; padding: 25px; border-radius: 10px; text-decoration: none; color: #333; transition: all 0.3s ease; box-shadow: 0 2px 15px rgba(0,0,0,0.1); border-left: 5px solid #2563eb; display: block; position: relative;">
                 <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
                     <div style="display: flex; align-items: center;">
-                        <i class="fas fa-thermometer-half" style="font-size: 2rem; color: #3182ce; margin-right: 15px; width: 50px; text-align: center;"></i>
+                        <i class="fas fa-thermometer-half" style="font-size: 2rem; color: #2563eb; margin-right: 15px; width: 50px; text-align: center;"></i>
                         <h3 style="margin: 0; font-size: 1.3rem; color: #2c5aa0; font-weight: bold;">HVAC</h3>
                     </div>
-                    <span style="background: #3182ce; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
+                    <span style="background: #2563eb; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
                         Compare 16+
                     </span>
                 </div>
@@ -216,7 +216,7 @@ const crossNavHTML = `
 </section>
 `;
 
-// CSS for current site highlighting
+// CSS for current site highlighting - UPDATED FOR HVAC COLORS
 const crossNavCSS = `
 <style>
 /* Cross-Navigation Styles */
@@ -226,9 +226,9 @@ const crossNavCSS = `
 }
 
 .dir-card.current-site {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+    background: linear-gradient(135deg, #2563eb, #1e40af) !important;
     color: white !important;
-    border-left: 5px solid var(--accent-color) !important;
+    border-left: 5px solid #f97316 !important;
 }
 
 .dir-card.current-site h3,
@@ -237,12 +237,12 @@ const crossNavCSS = `
 }
 
 .dir-card.current-site i {
-    color: var(--accent-color) !important;
+    color: #f97316 !important;
 }
 
 .dir-card.current-site span {
-    background: var(--accent-color) !important;
-    color: var(--secondary-color) !important;
+    background: #f97316 !important;
+    color: #1e40af !important;
     position: relative;
 }
 
@@ -256,8 +256,8 @@ const crossNavCSS = `
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--accent-color);
-    color: var(--secondary-color);
+    background: #f97316;
+    color: #1e40af;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 600;
