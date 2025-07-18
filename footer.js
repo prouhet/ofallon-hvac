@@ -273,6 +273,16 @@ const crossNavCSS = `
 
 // Function to inject cross-navigation and highlight current site
 function loadCrossNavigation() {
+    // Prevent duplicate injection
+    if (document.querySelector('#directories')) {
+        console.log('🚫 Cross-navigation already loaded, skipping...');
+        return;
+    }
+    
+    console.log('🔗 Loading cross-navigation footer for HVAC...');
+    // ... rest of the function
+}
+{
     console.log('🔗 Loading cross-navigation footer for HVAC...');
     
     // Add CSS first
